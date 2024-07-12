@@ -1,0 +1,26 @@
+.example-card {
+    max-width: 400px;
+  }
+
+  mat-card {
+    margin: 20px;
+  }
+  mat-card:hover {
+    background-color: rgb(152, 168, 184);
+  }
+  
+  .hyperlink{
+    cursor: pointer;
+  }
+  .divContainer{
+    width: 90%;padding-left: 90px;
+  }
+  
+  .table-border
+  {
+    border: 1px solid black;
+  }
+  .table-border
+{
+  border: 1px solid black;
+}

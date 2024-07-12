@@ -1,0 +1,40 @@
+<div  class="divContainer">
+    <div>
+      <h1>Welcome to Hacker News Portal</h1>
+    </div>
+    <div>
+      <mat-form-field>
+        <mat-label>Search Filter</mat-label>
+        <input matInput (keyup)="applyFilter($event)" placeholder="Search" #input>
+      </mat-form-field>
+    </div>
+    
+    <div>
+      <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 table-border">
+    
+        <!-- Title Column -->
+        <ng-container matColumnDef="title">
+          <th mat-header-cell *matHeaderCellDef> Title </th>
+          <td mat-cell *matCellDef="let element"> {{element.title}} </td>
+        </ng-container>
+    
+        <!-- Url Column -->
+        <ng-container matColumnDef="url">
+          <th mat-header-cell *matHeaderCellDef> Story Link </th>
+          <td mat-cell *matCellDef="let element"><a href="{{element.url}}" oncclick="open(element.url)" target="_blank">Click to view news</a></td>
+    
+        </ng-container>
+    
+    
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+    
+      <mat-paginator [pageSizeOptions]="[5, 25, 50]" showFirstLastButtons aria-label="Select page of story elements">
+      </mat-paginator>
+    </div>
+    </div>
+    
+<ngx-spinner bdColor = "rgba(0, 0, 0, 0.8)" size = "medium" color = "#fff" type = "square-jelly-box" [fullScreen] = "true"><p style="color: white" > Loading... </p></ngx-spinner>
+
+ 
